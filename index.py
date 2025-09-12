@@ -17,16 +17,12 @@ class StandardBankAccount:
 
 class SavingsAccount(StandardBankAccount):
     interest_rate = 0.02
-    def __init__(self, account_holder, balance):
-        super().__init__(account_holder, balance)
     
     def apply_interest(self):
         self.balance =  (1 + self.interest_rate) * self.balance
 
 class CheckingAccount(StandardBankAccount):
     transaction_fee = 1
-    def __init__(self, account_holder, balance):
-        super().__init__(account_holder, balance)
 
     def withdraw(self, amount):
         #Adds transaction fee to the amount to withdraw
